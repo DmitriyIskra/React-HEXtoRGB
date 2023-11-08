@@ -1,14 +1,22 @@
 import React from 'react'
 import './css/input-style.css'
 
+
 export default function ConverterInput(props) {
     const { callback } = props;
 
+    
     const handleInput = e => {
         const inputValue = e.target.value;
 
-        if(/^#([a-z0-9]){6}$/i.test(inputValue)) {
+        const checkStr = /^#([a-z0-9]){6}$/i.test(inputValue);
+
+        if( inputValue.length === 7 && checkStr) {
             callback(inputValue);
+        } else if(inputValue.length === 7 && !checkStr) {
+            callback('Ошибка!!!');
+        } else {
+            callback('');
         }
     }
 

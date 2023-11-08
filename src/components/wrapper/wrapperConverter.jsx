@@ -11,12 +11,6 @@ export default function Converter() {
         setForm(color);
     }
 
-    const changeColor = (e) => {
-        const mainWrapper = document.querySelector('.main-wrapper');
-
-        mainWrapper.style.backgroundColor = form;
-    }
-
     return (
         <div className='main-wrapper' style={{backgroundColor:form}}>
             <div className="converter-container">
